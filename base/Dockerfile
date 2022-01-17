@@ -30,6 +30,12 @@ RUN apk add --no-cache curl bash openjdk8-jre python3 py-pip nss libc6-compat co
 #Give permission to execute scripts
 RUN chmod +x /wait-for-step.sh && chmod +x /execute-step.sh && chmod +x /finish-step.sh
 
+# Remote Sharing File
+ARG shared_workspace=/resource
+RUN mkdir -p ${shared_workspace}
+ENV SHARED_WORKSPACE=${shared_workspace}
+VOLUME ${shared_workspace}
+
 # Fix the value of PYTHONHASHSEED
 # Note: this is needed when you use Python 3.3 or greater
 ENV PYTHONHASHSEED 1
