@@ -36,6 +36,8 @@ RUN mkdir -p ${shared_workspace}
 ENV SHARED_WORKSPACE=${shared_workspace}
 VOLUME ${shared_workspace}
 
+RUN apk add --no-cache py3-numpy
+
 # Fix the value of PYTHONHASHSEED
 # Note: this is needed when you use Python 3.3 or greater
 ENV PYTHONHASHSEED 1

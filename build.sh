@@ -18,6 +18,7 @@ if [ $# -eq 0 ]
     build base
     build master
     build worker
+    build zeppelin
     build history-server
     build submit
     build maven-template template/maven

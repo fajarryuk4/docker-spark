@@ -1,0 +1,131 @@
+﻿{
+  "paragraphs": [
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642925310538_1685500760",
+      "id": "paragraph_1642925310538_1685500760",
+      "dateCreated": "2022-01-23T08:08:30+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:4319",
+      "text": "ls -l notebook",
+      "dateUpdated": "2022-01-23T08:10:13+0000",
+      "dateFinished": "2022-01-23T08:10:13+0000",
+      "dateStarted": "2022-01-23T08:10:13+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "total 184\n-rw-r--r-- 1 root root 161986 Jan 23 08:07 01-LabelingData_2GTMRAVF6.zpln\ndrwxrwxr-x 2 root root   4096 Jan  8 01:34 Flink Tutorial\ndrwxrwxr-x 2 root root   4096 Jan  8 01:34 Miscellaneous Tutorial\ndrwxrwxr-x 2 root root   4096 Jan  8 01:34 Python Tutorial\ndrwxrwxr-x 2 root root   4096 Aug 17 05:44 R Tutorial\n-rw-r--r-- 1 root root   2458 Jan 23 08:10 shell_2GTXEDWD8.zpln\ndrwxrwxr-x 2 root root   4096 Jan  8 01:34 Spark Tutorial\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642925323103_840933307",
+      "id": "paragraph_1642925323103_840933307",
+      "dateCreated": "2022-01-23T08:08:43+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:4393",
+      "text": "#new update using 'sudo apk add nano'\nsudo apt install -y nano",
+      "dateUpdated": "2022-01-23T08:11:14+0000",
+      "dateFinished": "2022-01-23T08:11:15+0000",
+      "dateStarted": "2022-01-23T08:11:14+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\n\nReading package lists...\nBuilding dependency tree...\nReading state information...\nnano is already the newest version (4.8-1ubuntu1).\n0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642925463255_1448044011",
+      "id": "paragraph_1642925463255_1448044011",
+      "dateCreated": "2022-01-23T08:11:03+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:4691"
+    }
+  ],
+  "name": "shell",
+  "id": "2GTXEDWD8",
+  "defaultInterpreterGroup": "sh",
+  "version": "0.10.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/shell"
+}
