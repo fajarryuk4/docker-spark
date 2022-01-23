@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.15
 
 LABEL maintainer="Gezim Sejdiu <g.sejdiu@gmail.com>, Giannis Mouchakis <gmouchakis@gmail.com>"
 
@@ -14,12 +14,20 @@ COPY wait-for-step.sh /
 COPY execute-step.sh /
 COPY finish-step.sh /
 
+COPY require /root
+COPY env_python_3_with_R.yml /
+
 #COPY bde-spark.css /css/org/apache/spark/ui/static/timeline-view.css
 
-RUN apk add --no-cache curl bash openjdk8-jre python3 py-pip nss libc6-compat coreutils procps \
-      && ln -s /lib64/ld-linux-x86-64.so.2 /lib/ld-linux-x86-64.so.2 \
+RUN apk add --no-cache curl bash openjdk8-jre python3 py-pip nss coreutils procps py3-numpy wget\
       && chmod +x *.sh \
-      && wget ${BASE_URL}/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
+      && chmod +x /root/*.sh
+
+RUN bash /root/install-lang.sh \
+      && bash /root/install-glibc.sh \
+      && bash /root/install-miniconda.sh
+
+RUN wget ${BASE_URL}/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
       && tar -xvzf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
       && mv spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} spark \
       && rm spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
@@ -30,12 +38,9 @@ RUN apk add --no-cache curl bash openjdk8-jre python3 py-pip nss libc6-compat co
 #Give permission to execute scripts
 RUN chmod +x /wait-for-step.sh && chmod +x /execute-step.sh && chmod +x /finish-step.sh
 
-# Remote Sharing File
-ARG shared_workspace=/resource
-RUN mkdir -p ${shared_workspace}
-ENV SHARED_WORKSPACE=${shared_workspace}
-VOLUME ${shared_workspace}
+RUN rm -rf /root/install-glibc.sh /root/install-lang.sh /root/install-miniconda.sh /env_python_3_with_R.yml
 
 # Fix the value of PYTHONHASHSEED
 # Note: this is needed when you use Python 3.3 or greater
 ENV PYTHONHASHSEED 1
+ENV PATH /opt/conda/envs/python_3_with_R/bin:/opt/conda/bin:$PATH

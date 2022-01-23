@@ -1,0 +1,27 @@
+name: python_3_with_R
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - scipy
+  - numpy=1.19.5
+  - grpcio
+  - protobuf
+  - pandasql
+  - intake
+  - intake-parquet
+  - intake-xarray
+  - vega_datasets
+  - pip
+  - r-base=3
+  - r-data.table
+  - r-evaluate
+  - r-base64enc
+  - r-knitr
+  - pandas
+  - scikit-learn
+  - pyspark=3.1.2
+  - python-confluent-kafka
+  - pymongo
+  - findspark
